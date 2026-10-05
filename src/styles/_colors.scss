@@ -1,0 +1,24 @@
+:root {
+  /* Brand */
+  --color-primary: #6f39cb;
+
+  /* Gradient */
+  --gradient-primary-start: #c2a1fd;
+  --gradient-primary-end: #9154fd;
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--gradient-primary-start),
+    var(--gradient-primary-end)
+  );
+
+  /* Typography */
+  --color-text: #3a3541;
+  --color-text-light: #89868d;
+  --color-text-disabled: #b4b2b7;
+
+  /* Surfaces */
+  --color-neutral: #ffffff;
+  --color-background: #f4f5f9;
+  --color-background-secondary: #e7e7f4;
+  --color-border: #dbdcde;
+}
