@@ -1,0 +1,33 @@
+.button-showcase,
+.text-field-showcase {
+  padding: 32px;
+
+  h1 {
+    margin: 0;
+    font-size: var(--font-size-heading-lg);
+    font-weight: var(--font-weight-bold);
+  }
+
+  h2 {
+    margin: 0 0 12px;
+    font-size: var(--font-size-title-md);
+    font-weight: var(--font-weight-medium);
+  }
+
+  section {
+    margin-top: 24px;
+  }
+}
+
+.button-showcase__examples {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.text-field-showcase__examples {
+  display: grid;
+  gap: 24px;
+  max-width: 480px;
+}
