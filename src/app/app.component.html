@@ -1,74 +1,62 @@
-<div class="button-showcase">
-  <h1>Button Component</h1>
+<main class="metric-showcase">
+  <h1>Metric Card</h1>
 
   <section>
-    <h2>Primary</h2>
-    <div class="button-showcase__examples">
-      <app-button>Primary Button</app-button>
-      <app-button size="large">Large Primary</app-button>
+    <h2>Figma size example</h2>
+    <div class="metric-card-demo">
+      <app-metric-card title="Users" value="35k" [progress]="50">
+        <span metricIcon class="users-placeholder-icon">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="9" cy="7" r="3" />
+            <path d="M3 20v-2a6 6 0 0 1 12 0v2M16 4a3 3 0 0 1 0 6M21 20v-2a6 6 0 0 0-3-5.2" />
+          </svg>
+        </span>
+      </app-metric-card>
     </div>
   </section>
 
   <section>
-    <h2>Outline</h2>
-    <div class="button-showcase__examples">
-      <app-button variant="outline">Outline Button</app-button>
-      <app-button variant="outline">Withdraw All Earnings</app-button>
+    <h2>Reusable metrics</h2>
+    <div class="metric-card-grid">
+      <app-metric-card title="Users" value="35k" [progress]="50">
+        <span metricIcon class="metric-placeholder-icon">U</span>
+      </app-metric-card>
+      <app-metric-card title="Clicks" value="1m" [progress]="35">
+        <span metricIcon class="metric-placeholder-icon">C</span>
+      </app-metric-card>
+      <app-metric-card title="Sales" value="345$" [progress]="45">
+        <span metricIcon class="metric-placeholder-icon">S</span>
+      </app-metric-card>
+      <app-metric-card title="Items" [value]="68" [progress]="30">
+        <span metricIcon class="metric-placeholder-icon">I</span>
+      </app-metric-card>
     </div>
   </section>
 
   <section>
-    <h2>Text</h2>
-    <div class="button-showcase__examples">
-      <app-button variant="text">Text Button</app-button>
-    </div>
-  </section>
-
-  <section>
-    <h2>States</h2>
-    <div class="button-showcase__examples">
-      <app-button [disabled]="true">Disabled Button</app-button>
-      <app-button type="submit">Submit</app-button>
-    </div>
-  </section>
-</div>
-
-<div class="text-field-showcase">
-  <h1>TextField Component</h1>
-
-  <section class="text-field-showcase__examples">
-    <app-text-field placeholder="Enter text" />
-    <app-text-field label="Enter text" placeholder="Enter text" />
-    <app-text-field label="Email" type="email" placeholder="Enter email" />
-    <app-text-field label="Password" type="password" placeholder="Enter password" />
-    <app-text-field label="Disabled" placeholder="Disabled field" [disabled]="true" />
-    <app-text-field label="Readonly" placeholder="Readonly field" [readonly]="true" />
-    <app-text-field label="Location" placeholder="Germany">
-      <span textFieldPrefix aria-hidden="true">⌖</span>
-    </app-text-field>
-  </section>
-
-  <section>
-    <h2>Reactive Form</h2>
-    <form class="text-field-showcase__examples" [formGroup]="form">
-      <app-text-field
-        label="Email"
-        type="email"
-        placeholder="Enter your email"
-        autocomplete="email"
-        name="email"
-        formControlName="email"
+    <h2>Progress limits and long title</h2>
+    <div class="metric-card-grid">
+      <app-metric-card title="Empty" value="0%" [progress]="0" />
+      <app-metric-card title="Half" value="50%" [progress]="50" />
+      <app-metric-card title="Full" value="100%" [progress]="100" />
+      <app-metric-card title="Below minimum" value="-20%" [progress]="-20" />
+      <app-metric-card title="Above maximum" value="150%" [progress]="150" />
+      <app-metric-card
+        title="Users with a longer descriptive metric title"
+        value="35k"
+        [progress]="50"
       />
-      <app-text-field
-        label="Password"
-        type="password"
-        placeholder="Enter your password"
-        autocomplete="current-password"
-        name="password"
-        formControlName="password"
-      />
-    </form>
+    </div>
   </section>
-</div>
+</main>
 
 <router-outlet />

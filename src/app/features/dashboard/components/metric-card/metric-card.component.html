@@ -1,0 +1,23 @@
+<app-card padding="medium" [shadow]="true" [bordered]="false">
+  <div class="metric-card">
+    <div class="metric-card__header">
+      <div class="metric-card__icon" aria-hidden="true">
+        <ng-content select="[metricIcon]" />
+      </div>
+      <span class="metric-card__title">{{ title() }}</span>
+    </div>
+
+    <div class="metric-card__value">{{ value() }}</div>
+
+    <div
+      class="metric-card__progress"
+      role="progressbar"
+      [attr.aria-label]="title() + ' progress'"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      [attr.aria-valuenow]="safeProgress()"
+    >
+      <div class="metric-card__progress-value" [style.width.%]="safeProgress()"></div>
+    </div>
+  </div>
+</app-card>

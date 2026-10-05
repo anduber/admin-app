@@ -1,0 +1,11 @@
+<div
+  class="card"
+  [class.card--bordered]="bordered()"
+  [class.card--padding-none]="padding() === 'none'"
+  [class.card--padding-small]="padding() === 'small'"
+  [class.card--padding-medium]="padding() === 'medium'"
+  [class.card--padding-large]="padding() === 'large'"
+  [class.card--shadow]="shadow()"
+>
+  <ng-content />
+</div>

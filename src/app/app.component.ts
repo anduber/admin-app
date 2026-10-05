@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { ButtonComponent } from './shared/ui/button/button.component';
-import { TextFieldComponent } from './shared/ui/text-field/text-field.component';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MetricCardComponent } from './features/dashboard/components/metric-card/metric-card.component';
 
 @Component({
-  imports: [RouterOutlet, ReactiveFormsModule, ButtonComponent, TextFieldComponent],
+  imports: [RouterOutlet, MetricCardComponent],
   selector: 'app-root',
   styleUrl: './app.component.scss',
   templateUrl: './app.component.html',

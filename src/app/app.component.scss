@@ -1,33 +1,42 @@
-.button-showcase,
-.text-field-showcase {
+.metric-showcase {
+  max-width: 868px;
   padding: 32px;
+  box-sizing: border-box;
 
   h1 {
-    margin: 0;
+    margin: 0 0 24px;
     font-size: var(--font-size-heading-lg);
     font-weight: var(--font-weight-bold);
   }
 
   h2 {
-    margin: 0 0 12px;
+    margin: 0 0 16px;
     font-size: var(--font-size-title-md);
     font-weight: var(--font-weight-medium);
   }
 
-  section {
-    margin-top: 24px;
+  section + section {
+    margin-top: 32px;
   }
 }
 
-.button-showcase__examples {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 12px;
+.metric-card-demo {
+  width: 189px;
+  max-width: 100%;
 }
 
-.text-field-showcase__examples {
+.metric-card-grid {
   display: grid;
-  gap: 24px;
-  max-width: 480px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 189px), 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.users-placeholder-icon {
+  display: inline-flex;
+}
+
+.metric-placeholder-icon {
+  font-size: var(--font-size-title-sm);
+  font-weight: var(--font-weight-medium);
 }

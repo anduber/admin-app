@@ -1,0 +1,36 @@
+:host {
+  display: block;
+  width: 100%;
+  min-width: 0;
+}
+
+.card {
+  width: 100%;
+  box-sizing: border-box;
+  background: var(--color-neutral);
+  border-radius: 8px;
+
+  &--bordered {
+    border: 1px solid var(--color-border);
+  }
+
+  &--padding-none {
+    padding: 0;
+  }
+
+  &--padding-small {
+    padding: 12px;
+  }
+
+  &--padding-medium {
+    padding: 20px;
+  }
+
+  &--padding-large {
+    padding: 32px;
+  }
+
+  &--shadow {
+    box-shadow: 0 2px 8px rgb(0 0 0 / 8%);
+  }
+}
