@@ -1,3 +1,19 @@
+@font-face {
+  font-family: 'Lato';
+  src: url('/assets/fonts/Lato-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('/assets/fonts/Lato-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Font family */
   --font-family-primary: 'Lato', sans-serif;
@@ -29,4 +45,5 @@
   --font-size-body-lg: 16px;
   --font-size-body-md: 14px;
   --font-size-body-sm: 12px;
+  --font-size-body-xs: 10px;
 }

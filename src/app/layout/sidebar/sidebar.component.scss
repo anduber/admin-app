@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  width: 218px;
+  flex: 0 0 218px;
+  box-sizing: border-box;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 218px;
+  min-height: 100dvh;
+  padding-top: 50px;
+  box-sizing: border-box;
+  background: var(--color-neutral);
+
+  &__logo {
+    display: flex;
+    justify-content: center;
+
+    img {
+      display: block;
+      width: 78px;
+      height: 53.65px;
+      object-fit: contain;
+    }
+  }
+
+  &__navigation {
+    flex: 1;
+    margin-top: 40px;
+  }
+
+  &__list {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0 6px;
+    list-style: none;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+    padding: 24px 0 16px;
+  }
+}

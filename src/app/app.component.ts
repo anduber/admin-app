@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MetricCardComponent } from './features/dashboard/components/metric-card/metric-card.component';
+import { SidebarComponent } from './layout/sidebar/sidebar.component';
 
 @Component({
-  imports: [RouterOutlet, MetricCardComponent],
+  imports: [RouterOutlet, SidebarComponent],
   selector: 'app-root',
   styleUrl: './app.component.scss',
   templateUrl: './app.component.html',

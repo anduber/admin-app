@@ -1,0 +1,81 @@
+:host {
+  display: block;
+  width: 206px;
+}
+
+.nav-group {
+  &__row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 206px;
+    height: 40px;
+    padding: 0 16px;
+    box-sizing: border-box;
+    appearance: none;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--color-text);
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-body-lg);
+    font-weight: var(--font-weight-regular);
+    line-height: normal;
+    text-align: left;
+    text-decoration: none;
+
+    &--active {
+      // TODO: replace with exact Figma Primary Shade 7 token.
+      background: var(
+        --color-primary-shade-7,
+        color-mix(in srgb, var(--color-primary) 20%, var(--color-neutral))
+      );
+      color: var(--color-primary);
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        top: 8px;
+        width: 3px;
+        height: 24px;
+        border-radius: 0 3px 3px 0;
+        background: var(--color-primary);
+      }
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-primary);
+      outline-offset: -2px;
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 20px;
+  }
+
+  &__label {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__chevron {
+    width: 16px;
+    height: 16px;
+    flex: 0 0 16px;
+  }
+
+  &__children {
+    margin: 0;
+    padding: 10px 0;
+    list-style: none;
+  }
+}
+
+button.nav-group__row,
+a.nav-group__row {
+  cursor: pointer;
+}

@@ -1,42 +1,5 @@
-.metric-showcase {
-  max-width: 868px;
-  padding: 32px;
-  box-sizing: border-box;
-
-  h1 {
-    margin: 0 0 24px;
-    font-size: var(--font-size-heading-lg);
-    font-weight: var(--font-weight-bold);
-  }
-
-  h2 {
-    margin: 0 0 16px;
-    font-size: var(--font-size-title-md);
-    font-weight: var(--font-weight-medium);
-  }
-
-  section + section {
-    margin-top: 32px;
-  }
-}
-
-.metric-card-demo {
-  width: 189px;
-  max-width: 100%;
-}
-
-.metric-card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 189px), 1fr));
-  align-items: start;
-  gap: 16px;
-}
-
-.users-placeholder-icon {
-  display: inline-flex;
-}
-
-.metric-placeholder-icon {
-  font-size: var(--font-size-title-sm);
-  font-weight: var(--font-weight-medium);
+.sidebar-showcase {
+  display: flex;
+  min-height: 100dvh;
+  background: var(--color-background);
 }

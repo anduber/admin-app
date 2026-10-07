@@ -1,0 +1,18 @@
+@if (route()) {
+  <a
+    class="nav-item"
+    [routerLink]="route()"
+    routerLinkActive="nav-item--active"
+    [routerLinkActiveOptions]="{
+      paths: 'exact',
+      queryParams: 'ignored',
+      fragment: 'ignored',
+      matrixParams: 'ignored',
+    }"
+    ariaCurrentWhenActive="page"
+  >
+    {{ label() }}
+  </a>
+} @else {
+  <span class="nav-item">{{ label() }}</span>
+}

@@ -1,0 +1,22 @@
+<div class="sidebar-user">
+  @if (avatarUrl()) {
+    <img class="sidebar-user__avatar" [src]="avatarUrl()" alt="" />
+  } @else {
+    <span class="sidebar-user__avatar sidebar-user__initial" aria-hidden="true">{{
+      initial()
+    }}</span>
+  }
+
+  <div class="sidebar-user__details">
+    <span class="sidebar-user__name" [title]="name()">{{ name() }}</span>
+    <span class="sidebar-user__email" [title]="email()">{{ email() }}</span>
+  </div>
+
+  <button class="sidebar-user__menu" type="button" aria-label="Open user menu">
+    <svg viewBox="0 0 16 24" fill="currentColor" aria-hidden="true" focusable="false">
+      <circle cx="8" cy="5" r="1.5" />
+      <circle cx="8" cy="12" r="1.5" />
+      <circle cx="8" cy="19" r="1.5" />
+    </svg>
+  </button>
+</div>

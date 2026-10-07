@@ -1,0 +1,19 @@
+<aside class="sidebar" aria-label="Admin sidebar">
+  <div class="sidebar__logo">
+    <img src="assets/brand/logo-mark.svg" alt="Admin App" width="78" height="53.65" />
+  </div>
+
+  <nav class="sidebar__navigation" aria-label="Main navigation">
+    <ul class="sidebar__list">
+      @for (item of navigationItems; track item.label) {
+        <li>
+          <app-nav-group [item]="item" [expanded]="$first" />
+        </li>
+      }
+    </ul>
+  </nav>
+
+  <div class="sidebar__footer">
+    <app-sidebar-user name="Anita Cruz" email="anita@commerce.com" />
+  </div>
+</aside>

@@ -1,0 +1,81 @@
+<ng-template #rowContent>
+  <svg
+    class="nav-group__icon"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    focusable="false"
+  >
+    @switch (item().icon) {
+      @case ('home') {
+        <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z" />
+      }
+      @case ('pages') {
+        <path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8M8 16h8" />
+      }
+      @case ('applications') {
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      }
+      @case ('ecommerce') {
+        <path d="M3 3h2l3 13h10l3-9H6M9 20h.01M18 20h.01" />
+        <circle cx="9" cy="20" r="1" />
+        <circle cx="18" cy="20" r="1" />
+      }
+      @case ('authentication') {
+        <path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6Zm-4 9 3 3 5-6" />
+      }
+    }
+  </svg>
+  <span class="nav-group__label">{{ item().label }}</span>
+  <svg
+    class="nav-group__chevron"
+    viewBox="0 0 16 16"
+    fill="none"
+    stroke="currentColor"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <path [attr.d]="hasChildren() && expanded() ? 'm4 10 4-4 4 4' : 'm4 6 4 4 4-4'" />
+  </svg>
+</ng-template>
+
+@if (hasChildren()) {
+  <button
+    type="button"
+    class="nav-group__row"
+    [class.nav-group__row--active]="isActive()"
+    [attr.aria-expanded]="expanded()"
+    [attr.aria-label]="(expanded() ? 'Collapse ' : 'Expand ') + item().label"
+    (click)="toggle()"
+  >
+    <ng-container [ngTemplateOutlet]="rowContent" />
+  </button>
+} @else if (item().route) {
+  <a class="nav-group__row" [class.nav-group__row--active]="isActive()" [routerLink]="item().route">
+    <ng-container [ngTemplateOutlet]="rowContent" />
+  </a>
+} @else {
+  <div class="nav-group__row" [class.nav-group__row--active]="isActive()">
+    <ng-container [ngTemplateOutlet]="rowContent" />
+  </div>
+}
+
+@if (hasChildren() && expanded()) {
+  <ul class="nav-group__children">
+    @for (child of item().children; track child.label) {
+      <li>
+        <app-nav-item [label]="child.label" [route]="child.route" />
+      </li>
+    }
+  </ul>
+}
